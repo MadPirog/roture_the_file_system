@@ -4,9 +4,8 @@
 
 #define MAX_CONTENT_SIZE 1024
 
-// 1.1 Функция открытия/создания файла файловой системы
-FILE* open_or_create_fs(const char* filename) {
-    FILE* file = fopen(filename, "a+"); 
+FILE *open_f(const char* filename) {
+    FILE *file = fopen(filename, "a+"); 
     if (file == NULL) {
         perror("Error opening file");
         exit(EXIT_FAILURE);
@@ -14,13 +13,12 @@ FILE* open_or_create_fs(const char* filename) {
     return file;
 }
 
-// 1.2 Функция просмотра содержимого файла в файловой системе
-char* view_file_in_fs(FILE* fs_file, const char* target_filename) {
+char* view_f(FILE* fs_file, const char* target_filename) {
     fseek(fs_file, 0, SEEK_SET);
     
     char line[256];
     int found = 0;
-    char* content = malloc(MAX_CONTENT_SIZE);
+    char *content = malloc(MAX_CONTENT_SIZE);
     content[0] = '\0';
     
     while (fgets(line, sizeof(line), fs_file)) {
@@ -47,9 +45,9 @@ char* view_file_in_fs(FILE* fs_file, const char* target_filename) {
     return content;
 }
 
-// 1.3 Функция удаления файла из файловой системы
-int delete_file_in_fs(const char* fs_filename, const char* target_filename) {
-    FILE* fs_file = fopen(fs_filename, "r");
+
+int delete_f(const char *fs_filename, const char *target_filename) {
+    FILE *fs_file = fopen(fs_filename, "r");
     if (fs_file == NULL) {
         return 0;
     }
@@ -100,3 +98,7 @@ int delete_file_in_fs(const char* fs_filename, const char* target_filename) {
     fclose(fs_file);
     return 1;
 }
+
+
+
+   
