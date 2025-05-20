@@ -133,7 +133,6 @@ int modify_fs(const char* fs_filename, const char* target_filename, const char* 
     int file_found = 0;
     char line[256];
     
-    // Читаем все строки файла
     while (fgets(line, sizeof(line), fs_file)) {
         line[strcspn(line, "\n")] = '\0';
         
@@ -141,7 +140,6 @@ int modify_fs(const char* fs_filename, const char* target_filename, const char* 
             if (strcmp(line, target_filename) == 0) {
                 modify_mode = 1;
                 file_found = 1;
-                // Сохраняем имя файла
                 lines = realloc(lines, (count + 1) * sizeof(char*));
                 lines[count] = strdup(line);
                 count++;
