@@ -73,3 +73,13 @@ modify_fs("my_fs.txt", "test.txt", "New content");
 delete_f("my_fs.txt", "old_file.txt");
 
 fclose(fs);
+
+## Подключение библиотеки
+
+1. Добавьте в свой проект:
+   - `filesystem.h` в папку include
+   - `filesystem.c` в папку src
+
+2. В коде подключите заголовочный файл:
+```c
+#include "filesystem.h"
