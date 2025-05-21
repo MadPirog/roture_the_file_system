@@ -99,7 +99,7 @@ int delete_f(const char *fs_filename, const char *target_filename) {
     fclose(fs_file);
     return 1;
 }
-int create_file(FILE* fs_file, const char* filename, const char* content) {
+int create_f(FILE* fs_file, const char* filename, const char* content) {
     fseek(fs_file, 0, SEEK_END); 
     
    
@@ -122,7 +122,7 @@ int create_file(FILE* fs_file, const char* filename, const char* content) {
 }
 
 
-int modify_fs(const char* fs_filename, const char* target_filename, const char* new_content) {
+int modify_f(const char* fs_filename, const char* target_filename, const char* new_content) {
     FILE* fs_file = fopen(fs_filename, "r");
     if (fs_file == NULL) {
         return 0;
