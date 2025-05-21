@@ -11,7 +11,7 @@ int main(){
     printf("File content:/n%s", content);
     free(content);
   }
-fcolse(fs);
+fclose(fs);
   return 0;
   
 }
