@@ -72,7 +72,7 @@ modify_fs("my_fs.txt", "test.txt", "New content");
 // Удаление файла
 delete_f("my_fs.txt", "old_file.txt");
 
-fclose(fs);
+fclose(fs);'''
 
 ## Подключение библиотеки
 
