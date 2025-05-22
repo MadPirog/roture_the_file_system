@@ -31,7 +31,7 @@
 
 ---
 
-### `create_file`
+### `create_f`
 **Описание:** Создает новый файл в файловой системе  
 **Параметры:**  
 - `fs_file` (FILE*) - указатель на файл системы  
@@ -42,7 +42,7 @@
 
 ---
 
-### `modify_fs`
+### `modify_f`
 **Описание:** Изменяет содержимое существующего файла  
 **Параметры:**  
 - `fs_filename` (const char*) - путь к файлу системы  
@@ -67,7 +67,7 @@ if(content) {
 }
 
 // Модификация файла
-modify_fs("my_fs.txt", "test.txt", "New content");
+modify_f("my_fs.txt", "test.txt", "New content");
 
 // Удаление файла
 delete_f("my_fs.txt", "old_file.txt");
